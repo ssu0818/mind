@@ -22,26 +22,3 @@
   		<div class="a">
 	  		<div>
 	  			<!-- image start -->
-				<a>
-					<img src="" >
-				</a>
-				<!-- image end -->
-				<!-- bottom div start -->
-				<div>
-					<a>
-						<title>TITLE</title>
-					</a>
-					<img> <!-- 넣을 수 있으면... -->
-					<h3>NAME</h3>
-					<p>content</p>
-				</div>
-				<!-- bottom div end -->
-			</div>
-			
-			
-  		</div>
-  		<!-- col end -->
-  	</div>
-  	<!-- container end -->
-
-<h3>--include footer--</h3>

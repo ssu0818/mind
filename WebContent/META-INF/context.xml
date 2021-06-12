@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<Context>
+     <WatchedResource>WEB-INF/web.xml</WatchedResource>
+     <Resource name="jdbc/kpc"
+             auth="Container"
+             type="javax.sql.DataSource"
+             driverClassName="org.mariadb.jdbc.Driver"
+             url="jdbc:mariadb://localhost/kpc?autoReconnect=true"
+             username="kpc12"
+             password="kpc1212"
+             maxActive="7"
+             maxIdle="4"
+             maxWait="3000"
+             testOnBorrow="true"
+             testOnReturn="false"
+             validationQuery="SELECT 1"/>
+</Context>

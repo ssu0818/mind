@@ -29,13 +29,14 @@ public class MaincontDao {
 		try {
 			con = ConnLocator.getConnect();
 			StringBuilder sql = new StringBuilder();
-			sql.append("INSERT INTO maincont(m_num, m_writer, m_content, m_like, m_regdate) ");
-			sql.append("VALUES(?, '?', '?', '?', NOW())										");
+			sql.append("INSERT INTO maincont(m_num, m_writer, m_title, m_content, m_like, m_regdate) ");
+			sql.append("VALUES(?, ?, ?, ?, ?, NOW())										");
 
 			pstmt = con.prepareStatement(sql.toString());
 			int index = 1;
 			pstmt.setInt(index++, dto.getNum());
 			pstmt.setString(index++, dto.getWriter());
+			pstmt.setString(index++, dto.getTitle());
 			pstmt.setString(index++, dto.getContent());
 			pstmt.setInt(index++, dto.getLike());
 
@@ -43,12 +44,10 @@ public class MaincontDao {
 			success = true;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, null);
 		}
-
 		return success;
 	}
 	
@@ -61,12 +60,13 @@ public class MaincontDao {
 			con = ConnLocator.getConnect();
 			StringBuilder sql = new StringBuilder();
 			sql.append("UPDATE maincont 							");
-			sql.append("SET m_writer = ?, m_content = ?, m_like = ? ");
+			sql.append("SET m_writer = ?, m_title = ?, m_content = ?, m_like = ? ");
 			sql.append("WHERE m_num = ?								 ");
 	
 			pstmt = con.prepareStatement(sql.toString());
 			int index = 1;
 			pstmt.setString(index++, dto.getWriter());
+			pstmt.setString(index++, dto.getTitle());
 			pstmt.setString(index++, dto.getContent());
 			pstmt.setInt(index++, dto.getLike());
 			pstmt.setInt(index++, dto.getNum());
@@ -75,12 +75,10 @@ public class MaincontDao {
 			success = true;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, null);
 		}
-
 		return success;
 	}
 
@@ -102,56 +100,52 @@ public class MaincontDao {
 			success = true;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, null);
 		}
-
 		return success;
 	}
 	
 	public ArrayList<MaincontDto> select(int start, int len){
 		ArrayList<MaincontDto> list = new ArrayList<MaincontDto>();
-
-	Connection con = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
-	try {
-		con = ConnLocator.getConnect();
-		
-		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT m_num, m_writer, m_content, m_like, m_regdate ");
-		sql.append("FROM maincont 			");
-		sql.append("order BY m_regdate DESC ");
-		sql.append("LIMIT ?, ? 				");
-
-		pstmt = con.prepareStatement(sql.toString());
-
-		int index = 1;
-		pstmt.setInt(index++, 0);
-		pstmt.setString(index++, "");
-
-		rs = pstmt.executeQuery();
-		while (rs.next()) {
-			index = 1;
-			int num = rs.getInt(index);
-			String writer = rs.getString(index++);
-			String content = rs.getString(index++);
-			int like = rs.getInt(index++);
-			String regdate= rs.getString(index++);
-			list.add(new MaincontDto(num, writer, content, like, regdate));
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = ConnLocator.getConnect();
+			StringBuilder sql = new StringBuilder();
+			sql.append("SELECT m_num, m_writer, m_title, m_content, m_like, date_format(m_regdate, '%h') ");
+			sql.append("FROM maincont 			");
+			sql.append("order BY m_regdate DESC ");
+			sql.append("LIMIT ?, ? 				");
+	
+			pstmt = con.prepareStatement(sql.toString());
+	
+			int index = 1;
+			pstmt.setInt(index++, start);
+			pstmt.setInt(index++, len);
+	
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				index = 1;
+				int num = rs.getInt(index++);
+				String writer = rs.getString(index++);
+				String title = rs.getString(index++);
+				String content = rs.getString(index++);
+				int like = rs.getInt(index++);
+				String regdate= rs.getString(index++);
+				list.add(new MaincontDto(num, writer, title, content, like, regdate));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(con, pstmt, rs);
 		}
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} finally {
-		close(con, pstmt, rs);
+		return list;
 	}
-
-	return list;
-	}
+	
 	public int getRows() {
 		int resultCount = 0;
 		Connection con = null;
@@ -161,8 +155,8 @@ public class MaincontDao {
 			con = ConnLocator.getConnect();
 
 			StringBuilder sql = new StringBuilder();
-			sql.append("SELECT COUNT(n_num) 	");
-			sql.append("FROM notice 			");
+			sql.append("SELECT COUNT(m_num) 	");
+			sql.append("FROM maincont 			");
 
 			pstmt = con.prepareStatement(sql.toString());
 
@@ -175,20 +169,16 @@ public class MaincontDao {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, rs);
 		}
-
 		return resultCount;
 	}
 	
 	
 	
-	private void close(Connection con, 
-			PreparedStatement pstmt, 
-			ResultSet rs) {
+	private void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
 		try {
 			if (con != null)
 				con.close();
@@ -197,10 +187,10 @@ public class MaincontDao {
 			if (rs != null)
 				rs.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 	public int getMaxNum() {
 		int resultCount = 0;	
 		Connection con = null;
@@ -223,12 +213,10 @@ public class MaincontDao {
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			close(con, pstmt, rs);
 		}
-		
 		return resultCount;	
 	}
 	
@@ -238,10 +226,9 @@ public class MaincontDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			
 			con = ConnLocator.getConnect();
 			StringBuilder sql = new StringBuilder();
-			sql.append("SELECT m_num, m_writer, m_content, m_like, date_format(m_regdate, '%Y/%m/%d %h:%i') ");
+			sql.append("SELECT m_num, m_writer, m_title, m_content, m_like, date_format(m_regdate, '%Y/%m/%d %h:%i') ");
 			sql.append("FROM maincont ");
 			sql.append("WHERE m_num = ? ");
 
@@ -255,25 +242,19 @@ public class MaincontDao {
 				index = 1;
 				num = rs.getInt(index++);
 				String writer = rs.getString(index++);
+				String title = rs.getString(index++);
 				String content = rs.getString(index++);
 				int like = rs.getInt(index);
 				String regdate = rs.getString(index++);
-				dto = new MaincontDto(num, writer, content,
-						like, regdate);	
+				dto = new MaincontDto(num, writer, title, content, like, regdate);	
 			}
-			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close(con, pstmt, rs);
 		}
-
 		return dto;	
 	}
-	
-	
-	
 }
 	
 

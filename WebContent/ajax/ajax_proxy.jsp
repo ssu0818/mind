@@ -1,4 +1,4 @@
-<%-- ajax_proxy.jsp --%>
+<%-- ajax_proxy.jsp --%> 
 <%@ page pageEncoding="utf-8" %>
 <!-- ajax step05.html 가져옴-->
 <!DOCTYPE html>

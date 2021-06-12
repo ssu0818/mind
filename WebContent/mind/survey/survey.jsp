@@ -16,7 +16,7 @@
 		<div>
          <p>해당 사항이 없으시면 항목을 비워두세요.</p>
 	</div>
-    <form id="health02Form" method="post" action="result.jsp"> 
+    <form id="health02Form" method="post" action="surveyResult.jsp"> 
     <table class="tbl type8 mt20"> 
          <colgroup> 
           <col style="width:*"> 

@@ -90,12 +90,12 @@
 					}
 					
 				
-				        document.getElementById('btn1').addEventListener('click',btn1Run);
+				        /* document.getElementById('btn1').addEventListener('click',btn1Run);
 						document.getElementById('btn2').addEventListener('click',btn2Run);
 						document.getElementById('btn3').addEventListener('click',btn3Run);
 						document.getElementById('btn4').addEventListener('click',btn4Run);
 						document.getElementById('btn5').addEventListener('click',btn5Run);
-						document.getElementById('btn6').addEventListener('click',btn6Run);
+						document.getElementById('btn6').addEventListener('click',btn6Run); */
 					
 					
 					
@@ -115,7 +115,7 @@
 					//btn1 start
 					/*=======================================*/
 					
-					function btn1Run(){
+					/* function btn1Run(){
 					// 키워드로 장소를 검색합니다
 					searchPlaces();					
 					
@@ -157,7 +157,7 @@
 					        return;
 					    }
 					}
-					};
+					}; */
 					/*=======================================*/
 					//btn1 end
 					/*=======================================*/
@@ -166,11 +166,7 @@
 					
 					
 					
-					/*=======================================*/
-					//btn2 start
-					/*=======================================*/
 					
-					function btn2Run(){
 					// 키워드로 장소를 검색합니다
 					searchPlaces();					
 					
@@ -212,225 +208,7 @@
 					        return;
 					    }
 					}
-					};
-					/*=======================================*/
-					//btn2 end
-					/*=======================================*/
 					
-					
-					/*=======================================*/
-					//btn3 start
-					/*=======================================*/
-					
-					function btn3Run(){
-					// 키워드로 장소를 검색합니다
-					searchPlaces();					
-					
-					// 키워드 검색을 요청하는 함수입니다
-					function searchPlaces() {
-						var keyword = document.getElementById('btn3').value;
-					
-					    if (!keyword.replace(/^\s+|\s+$/g, '')) {
-					        alert('키워드를 입력해주세요!');
-					        return false;
-					    }
-					    
-					    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-					    ps.keywordSearch( keyword, placesSearchCB,{
-					    	location : locPosition,
-					    	radius : 5000,
-					    	sort : kakao.maps.services.SortBy.DISTANCE
-					    	}); 
-					}
-					// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-					function placesSearchCB(data, status, pagination) {
-					    if (status === kakao.maps.services.Status.OK) {
-					
-					        // 정상적으로 검색이 완료됐으면
-					        // 검색 목록과 마커를 표출합니다
-					        displayPlaces(data);
-					
-					        // 페이지 번호를 표출합니다
-					        displayPagination(pagination);
-					
-					    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-					
-					        alert('검색 결과가 존재하지 않습니다.');
-					        return;
-					
-					    } else if (status === kakao.maps.services.Status.ERROR) {
-					
-					        alert('검색 결과 중 오류가 발생했습니다.');
-					        return;
-					    }
-					}
-					};
-					/*=======================================*/
-					//btn3 end
-					/*=======================================*/
-
-					
-					/*=======================================*/
-					//btn4 start
-					/*=======================================*/
-					
-					function btn4Run(){
-					// 키워드로 장소를 검색합니다
-					searchPlaces();					
-					
-					// 키워드 검색을 요청하는 함수입니다
-					function searchPlaces() {
-						var keyword = document.getElementById('btn4').value;
-					
-					    if (!keyword.replace(/^\s+|\s+$/g, '')) {
-					        alert('키워드를 입력해주세요!');
-					        return false;
-					    }
-					    
-					    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-					    ps.keywordSearch( keyword, placesSearchCB,{
-					    	location : locPosition,
-					    	radius : 5000,
-					    	sort : kakao.maps.services.SortBy.DISTANCE
-					    	}); 
-					}
-					// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-					function placesSearchCB(data, status, pagination) {
-					    if (status === kakao.maps.services.Status.OK) {
-					
-					        // 정상적으로 검색이 완료됐으면
-					        // 검색 목록과 마커를 표출합니다
-					        displayPlaces(data);
-					
-					        // 페이지 번호를 표출합니다
-					        displayPagination(pagination);
-					
-					    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-					
-					        alert('검색 결과가 존재하지 않습니다.');
-					        return;
-					
-					    } else if (status === kakao.maps.services.Status.ERROR) {
-					
-					        alert('검색 결과 중 오류가 발생했습니다.');
-					        return;
-					
-					    }
-					}
-			
-					};
-					/*=======================================*/
-					//btn4 end
-					/*=======================================*/
-					
-					
-					/*=======================================*/
-					//btn5 start
-					/*=======================================*/
-					
-					function btn5Run(){
-					// 키워드로 장소를 검색합니다
-					searchPlaces();					
-					
-					// 키워드 검색을 요청하는 함수입니다
-					function searchPlaces() {
-						var keyword = document.getElementById('btn5').value;
-					
-					    if (!keyword.replace(/^\s+|\s+$/g, '')) {
-					        alert('키워드를 입력해주세요!');
-					        return false;
-					    }
-					    
-					    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-					    ps.keywordSearch( keyword, placesSearchCB,{
-					    	location : locPosition,
-					    	radius : 5000,
-					    	sort : kakao.maps.services.SortBy.DISTANCE
-					    	}); 
-					}
-					// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-					function placesSearchCB(data, status, pagination) {
-					    if (status === kakao.maps.services.Status.OK) {
-					
-					        // 정상적으로 검색이 완료됐으면
-					        // 검색 목록과 마커를 표출합니다
-					        displayPlaces(data);
-					
-					        // 페이지 번호를 표출합니다
-					        displayPagination(pagination);
-					
-					    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-					
-					        alert('검색 결과가 존재하지 않습니다.');
-					        return;
-					
-					    } else if (status === kakao.maps.services.Status.ERROR) {
-					
-					        alert('검색 결과 중 오류가 발생했습니다.');
-					        return;
-					
-					    }
-					}
-			
-					};
-					/*=======================================*/
-					//btn5 end
-					/*=======================================*/
-					
-					/*=======================================*/
-					//btn6 start
-					/*=======================================*/
-					
-					function btn6Run(){
-					// 키워드로 장소를 검색합니다
-					searchPlaces();					
-					
-					// 키워드 검색을 요청하는 함수입니다
-					function searchPlaces() {
-						var keyword = document.getElementById('btn6').value;
-					
-					    if (!keyword.replace(/^\s+|\s+$/g, '')) {
-					        alert('키워드를 입력해주세요!');
-					        return false;
-					    }
-					    
-					    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-					    ps.keywordSearch( keyword, placesSearchCB,{
-					    	location : locPosition,
-					    	radius : 5000,
-					    	sort : kakao.maps.services.SortBy.DISTANCE
-					    	}); 
-					}
-					// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-					function placesSearchCB(data, status, pagination) {
-					    if (status === kakao.maps.services.Status.OK) {
-					
-					        // 정상적으로 검색이 완료됐으면
-					        // 검색 목록과 마커를 표출합니다
-					        displayPlaces(data);
-					
-					        // 페이지 번호를 표출합니다
-					        displayPagination(pagination);
-					
-					    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-					
-					        alert('검색 결과가 존재하지 않습니다.');
-					        return;
-					
-					    } else if (status === kakao.maps.services.Status.ERROR) {
-					
-					        alert('검색 결과 중 오류가 발생했습니다.');
-					        return;
-					
-					    }
-					}
-			
-					};
-					/*=======================================*/
-					//btn6 end
-					/*=======================================*/
-					
-
 					// 검색 결과 목록과 마커를 표출하는 함수입니다
 					function displayPlaces(places) {
 					

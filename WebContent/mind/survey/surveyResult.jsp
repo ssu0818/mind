@@ -6,6 +6,7 @@
 
 	Enumeration<String> radioValues = request.getParameterNames();
 	int sum = 0;
+	int maxScore = 406;
 	String books = "서점";
 	String coffee = "커피";
 	String park = "근린공원";
@@ -224,13 +225,13 @@ width:960px;
 
 </head>
 		<body>
-	<% if(sum < 304){ %>
+	<% if(sum < maxScore*0.75){ %>
 		<p> 당신의 스트레스 점수는 <%=sum %>점입니다.</p>
 		<p> <%=park%>에서 산책하며 맞는 바람에 스트레스를 실려보내면 어떨까요?</p>
-	<%} else if(sum >= 304 && sum < 345){ %>
+	<%} else if(sum >= maxScore*0.75 && sum < maxScore*0.85){ %>
 	   	<p> 당신의 스트레스 점수는 <%=sum %>점입니다.</p>
 		<p> <%=books%>의 책 한 권과 <%=coffee%> 한 잔의 여유……어떠세요?</p> 	
-	<%} else if(sum >= 345 && sum < 365){ %>	
+	<%} else if(sum >= maxScore*0.85 && sum < maxScore*0.95){ %>	
 		<p> 당신의 스트레스 점수는 <%=sum %>점입니다.</p>
 		<p> <%=theater%>에서 멍때리는 것도 낭만있죠?</p>
 	<%}	else { %>
@@ -270,7 +271,7 @@ width:960px;
 						<input type="button" value="헬스" id= "btn5" size="15" onsubmit="searchPlaces()">
 						</span>
 						<span>
-						<input type="button" value="맛집" id= "btn6" size="15" onsubmit="searchPlaces()">
+						<input type="<%if(sum>=maxScore*0.95){ %>button<%} else {%>hidden<%} %>" value="정신건강복지센터" id= "btn6" size="15" onsubmit="searchPlaces()">
 						</span>
 						<span>
 						<button><a class="btn btn-light" href="valCalc.jsp" role="button">다시하기</a></button>

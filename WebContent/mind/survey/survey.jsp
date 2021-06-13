@@ -14,7 +14,9 @@
 </head>
 <body>		
 		<div>
-         <p>해당 사항이 없으시면 항목을 비워두세요.</p>
+         <p>&check;&nbsp;해당 사항이 없으시면 항목을 비워두세요.<br>
+         	&check;&nbsp;총 소요 시간은 약 5분입니다.
+         </p>
 	</div>
     <form id="health02Form" method="post" action="surveyResult.jsp"> 
     <table class="tbl type8 mt20"> 

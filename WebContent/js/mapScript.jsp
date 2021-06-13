@@ -21,8 +21,8 @@
 					// 지도를 생성
 					var map = new kakao.maps.Map(mapContainer, mapOption);
 					
-					/* //고정 좌표
-					var mapContainer = document.getElementById("map");
+					//고정 좌표
+					/* var mapContainer = document.getElementById("map");
 
 					// 지도를 표시할 div 
 				    mapOption = { 
@@ -31,7 +31,7 @@
 				    };
 
 				// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-				var map = new kakao.maps.Map(mapContainer, mapOption); */
+				var map = new kakao.maps.Map(mapContainer, mapOption);*/
 				
 				// 지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
 				kakao.maps.event.addListener(map, 'center_changed', function() {
@@ -88,20 +88,6 @@
 					    // 지도 중심좌표를 접속위치로 변경합니다
 					    map.setCenter(locPosition);      
 					}
-					
-				
-				        /* document.getElementById('btn1').addEventListener('click',btn1Run);
-						document.getElementById('btn2').addEventListener('click',btn2Run);
-						document.getElementById('btn3').addEventListener('click',btn3Run);
-						document.getElementById('btn4').addEventListener('click',btn4Run);
-						document.getElementById('btn5').addEventListener('click',btn5Run);
-						document.getElementById('btn6').addEventListener('click',btn6Run); */
-					
-					
-					
-					
-					
-					
 					/* 키워드로 장소검색하고 목록으로 표출하기 */
 					var markers = [];
 					
@@ -110,63 +96,6 @@
 					
 					// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
 					var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-					/*=======================================*/
-					//btn1 start
-					/*=======================================*/
-					
-					/* function btn1Run(){
-					// 키워드로 장소를 검색합니다
-					searchPlaces();					
-					
-					// 키워드 검색을 요청하는 함수입니다
-					function searchPlaces() {
-						var keyword = document.getElementById('btn1').value;
-					
-					    if (!keyword.replace(/^\s+|\s+$/g, '')) {
-					        alert('키워드를 입력해주세요!');
-					        return false;
-					    }
-					    
-					    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-					    ps.keywordSearch( keyword, placesSearchCB,{
-					    	location : locPosition,
-					    	radius : 5000,
-					    	sort : kakao.maps.services.SortBy.DISTANCE
-					    	}); 
-					}
-					// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-					function placesSearchCB(data, status, pagination) {
-					    if (status === kakao.maps.services.Status.OK) {
-					
-					        // 정상적으로 검색이 완료됐으면
-					        // 검색 목록과 마커를 표출합니다
-					        displayPlaces(data);
-					
-					        // 페이지 번호를 표출합니다
-					        displayPagination(pagination);
-					
-					    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-					
-					        alert('검색 결과가 존재하지 않습니다.');
-					        return;
-					
-					    } else if (status === kakao.maps.services.Status.ERROR) {
-					
-					        alert('검색 결과 중 오류가 발생했습니다.');
-					        return;
-					    }
-					}
-					}; */
-					/*=======================================*/
-					//btn1 end
-					/*=======================================*/
-					
-					
-					
-					
-					
-					
 					// 키워드로 장소를 검색합니다
 					searchPlaces();					
 					
@@ -208,7 +137,7 @@
 					        return;
 					    }
 					}
-					
+
 					// 검색 결과 목록과 마커를 표출하는 함수입니다
 					function displayPlaces(places) {
 					
@@ -368,11 +297,11 @@
 					    }
 					}
 
-			 	})//위치정보 map end		
+			  })//위치정보 map end		
 
-		 } else { //현재 위치 서비스를 지원하지 않을 때 
+		  } else { //현재 위치 서비스를 지원하지 않을 때 
 		//	console.log("현재 위치 서비스를 지원하지 않는 브라우저입니다.");
-		} 
+		}
 		
 	}; //onload end
 </script>

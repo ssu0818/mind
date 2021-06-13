@@ -7,11 +7,10 @@ public class MaincontDto {
 	private String content;
 	private int like;
 	private String regdate;
-	
 	public MaincontDto() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
-	
 	public MaincontDto(int num, String writer, String title, String content, int like, String regdate) {
 		super();
 		this.num = num;
@@ -21,7 +20,6 @@ public class MaincontDto {
 		this.like = like;
 		this.regdate = regdate;
 	}
-	
 	public int getNum() {
 		return num;
 	}
@@ -58,6 +56,7 @@ public class MaincontDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-
+	
+	
 	
 }

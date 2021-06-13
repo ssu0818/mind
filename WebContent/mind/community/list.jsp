@@ -1,7 +1,4 @@
 <%-- list.jsp --%>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />	
 <%@page import="java.util.Calendar"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
@@ -55,9 +52,12 @@
 	int start = (cPage-1)*displayCount;
 	MaincontDao dao = MaincontDao.getInstance();
 	ArrayList<MaincontDto> list = dao.select(start, displayCount);
-	Calendar cal = Calendar.getInstance();
-	int hour = cal.get(Calendar.HOUR_OF_DAY);
 	
+	
+	Calendar cal = Calendar.getInstance();
+	SimpleDateFormat fm = new SimpleDateFormat("MMddHHmm");
+	String to = fm.format(cal.getTime());
+	int hour = Integer.parseInt(to);
 %>
 
 
@@ -71,13 +71,15 @@
 	int hiddenTime = 0;
 		if(list.size() != 0){
 			for(MaincontDto dto : list){
-				int regDate = Integer.parseInt(dto.getRegdate());
-				//현재<=등록시간+24h
-				if(hour <= (regDate+cal.add(Calendar.HOUR, 24))){
-					if(regDate>=hour){ //등록시간>=현재시간
-						hiddenTime = (regDate+24)-(hour+24);
+				int regDate = Integer.parseInt(dto.getRegdate()); //월일시분 6131323
+				int regHour = Integer.parseInt(dto.getRegdate().substring(4,6));
+				int curHour = Integer.parseInt(to.substring(4,6));
+				//현재<=등록시간+24
+				if(hour <= regDate ){
+					if(regHour>=curHour){ //등록시간>=현재시간
+						hiddenTime = (regHour+24)-(curHour+24);
 						if(hiddenTime >= 1 ){
-		--%>
+	%>
 				<%--남은시간 1시간 이상일 때 --%>
 				<div class="row row-cols-1 row-cols-md-1">
 					 <div class="col mb-4">
@@ -104,7 +106,7 @@
 		<%
 						}// end of if%>
 		<%		}else{//regDate<hour
-						hiddenTime = (regDate+24)-hour;
+						hiddenTime = (regHour+24)-curHour;
 		
 						if(hiddenTime >= 1 ){ 
 		%>
@@ -140,7 +142,7 @@
 		<%
 						}//if end
 					}//regDate<hour end
-				}//hour <= regDate+cal.add(Calendar.HOUR, 24) end
+				}//hour <= 현재-24<=등록시간 end
 		}//for end
 			
 	}else{ %>

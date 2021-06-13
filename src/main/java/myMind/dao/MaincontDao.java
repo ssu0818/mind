@@ -30,7 +30,7 @@ public class MaincontDao {
 			con = ConnLocator.getConnect();
 			StringBuilder sql = new StringBuilder();
 			sql.append("INSERT INTO maincont(m_num, m_writer, m_title, m_content, m_like, m_regdate) ");
-			sql.append("VALUES(?, ?, ?, ?, ?, NOW())										");
+			sql.append("VALUES(?, (select * from anonymous order by rand() limit 1), ?, ?, ?, NOW())										");
 
 			pstmt = con.prepareStatement(sql.toString());
 			int index = 1;
@@ -51,61 +51,6 @@ public class MaincontDao {
 		return success;
 	}
 	
-	
-	public boolean update(MaincontDto dto) {
-		boolean success = false;
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		try {
-			con = ConnLocator.getConnect();
-			StringBuilder sql = new StringBuilder();
-			sql.append("UPDATE maincont 							");
-			sql.append("SET m_writer = ?, m_title = ?, m_content = ?, m_like = ? ");
-			sql.append("WHERE m_num = ?								 ");
-	
-			pstmt = con.prepareStatement(sql.toString());
-			int index = 1;
-			pstmt.setString(index++, dto.getWriter());
-			pstmt.setString(index++, dto.getTitle());
-			pstmt.setString(index++, dto.getContent());
-			pstmt.setInt(index++, dto.getLike());
-			pstmt.setInt(index++, dto.getNum());
-	
-			pstmt.executeUpdate();
-			success = true;
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(con, pstmt, null);
-		}
-		return success;
-	}
-
-	public boolean delete(int num) {
-		boolean success = false;
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		try {
-			con = ConnLocator.getConnect();
-			StringBuilder sql = new StringBuilder();
-			sql.append("DELETE FROM maincont 	");
-			sql.append("WHERE m_num = ?			");
-
-			pstmt = con.prepareStatement(sql.toString());
-			int index = 1;
-			pstmt.setInt(index++, num);
-
-			pstmt.executeUpdate();
-			success = true;
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(con, pstmt, null);
-		}
-		return success;
-	}
 	
 	public ArrayList<MaincontDto> select(int start, int len){
 		ArrayList<MaincontDto> list = new ArrayList<MaincontDto>();
@@ -115,7 +60,7 @@ public class MaincontDao {
 		try {
 			con = ConnLocator.getConnect();
 			StringBuilder sql = new StringBuilder();
-			sql.append("SELECT m_num, m_writer, m_title, m_content, m_like, date_format(m_regdate, '%h') ");
+			sql.append("SELECT m_num, m_writer, m_title, m_content, m_like, date_format(DATE_ADD(m_regdate, interval 24 HOUR),'%m%d%H%i') ");
 			sql.append("FROM maincont 			");
 			sql.append("order BY m_regdate DESC ");
 			sql.append("LIMIT ?, ? 				");
@@ -145,6 +90,7 @@ public class MaincontDao {
 		}
 		return list;
 	}
+	
 	
 	public int getRows() {
 		int resultCount = 0;
@@ -255,6 +201,68 @@ public class MaincontDao {
 		}
 		return dto;	
 	}
+	
+	
+
+	public boolean update(MaincontDto dto) {
+		boolean success = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = ConnLocator.getConnect();
+			StringBuilder sql = new StringBuilder();
+			sql.append("UPDATE maincont 							");
+			sql.append("SET m_writer = ?, m_title = ?, m_content = ?, m_like = ? ");
+			sql.append("WHERE m_num = ?								 ");
+	
+			pstmt = con.prepareStatement(sql.toString());
+			int index = 1;
+			pstmt.setString(index++, dto.getWriter());
+			pstmt.setString(index++, dto.getTitle());
+			pstmt.setString(index++, dto.getContent());
+			pstmt.setInt(index++, dto.getLike());
+			pstmt.setInt(index++, dto.getNum());
+	
+			pstmt.executeUpdate();
+			success = true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(con, pstmt, null);
+		}
+		return success;
+	}
+
+	public boolean delete(int num) {
+		boolean success = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = ConnLocator.getConnect();
+			StringBuilder sql = new StringBuilder();
+			sql.append("DELETE FROM maincont 	");
+			sql.append("WHERE m_num = ?			");
+
+			pstmt = con.prepareStatement(sql.toString());
+			int index = 1;
+			pstmt.setInt(index++, num);
+
+			pstmt.executeUpdate();
+			success = true;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(con, pstmt, null);
+		}
+		return success;
+	}
+	
+	
 }
 	
+
+
+
 

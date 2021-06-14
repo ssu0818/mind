@@ -1,3 +1,5 @@
+<%@ page pageEncoding="utf-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +14,7 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
@@ -35,7 +37,14 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+  #story1text{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
 
+  }
+</style>
 
 <body>
 
@@ -66,14 +75,7 @@
   </header><!-- End Header -->
 
 
-<style>
-  #story1text{
-    text-align: left;
-    font-size: 30px;
-    font-weight: 700;
 
-  }
-</style>
   <main id="main">
 
   

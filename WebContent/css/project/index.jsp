@@ -1,3 +1,5 @@
+<%@ page pageEncoding="utf-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Services - Moderna Bootstrap Template</title>
+  <title>Moderna Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,45 +38,18 @@
   ======================================================== -->
 </head>
 <style>
-.seoulmap{
-  text-align: center;
-}
-#tv {
-      text-align: center;
-     
-      position: relative;
-      width: 100px;
-      height: 50px;
-      margin: 20px  20px;
-      
-      border: 5px solid blue;
- 
-      border-radius: 50% / 10%;
-      color: white;
-      text-align: center;
-      text-indent: .1em;
-      float: right;
-    }
-    #tv:before {
-      content: '';
-      position: absolute;
-      top: 10%;
-      bottom: 10%;
-      right: -5%;
-      left: -5%;
-      background: inherit;
-      border-radius: 5% / 50%;
-      float: right;
-    }
-    .seoulbtn{
-      padding: 10px 10px;
-    }
+  #story1text{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 700;
+
+  }
 </style>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <header id="header" class="fixed-top header-transparent">
     <div class="container">
 
       <div class="logo float-left">
@@ -99,12 +74,72 @@
     </div>
   </header><!-- End Header -->
 
-  <div id="map" style="width:100%;height:350px;"></div>
 
+
+  <main id="main">
+
+  
+    <!-- ======= story Section ======= -->
 
    
 
 
+    <section id="hero"  class="d-flex justify-cntent-center align-items-center" >
+    
+      <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel"  >
+  
+        <!-- Slide 1 -->
+     
+        <div class="carousel-item active" >
+
+          <div class="carousel-container" >
+            
+            <p id="story1text" class="animate__animated animate__fadeInDown" >지친 하루</span></p>
+            <p class="animate__animated animate__fadeInDown" style="text-align: left;">무기력함을 느끼며 잠드는 시간이 많아졌나요?</p>
+          </div>
+        </div>
+
+        <a class="carousel-control-next" href="stroy2.html" role="button" data-slide="next">
+          <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  
+      </div>
+    </section>
+
+
+   
+  
+    
+   
+    <!-- End stroy --> 
+
+    
+    
+
+
+
+
+
+
+
+     
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>My Mine</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
+        Designed by <a href="">kpc</a>
+      </div>   
+    </div>
+  </footer><!-- End Footer -->
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
@@ -123,51 +158,5 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f54af8924919de3e88d60eba1ed58b18"></script>
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new kakao.maps.LatLng(37.567291412313274, 126.98226358838974), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
 
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-// 마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(37.567291412313274, 126.98226358838974); 
-
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-    position: markerPosition
-});
-
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);
-
-var iwContent = '<div style="padding:5px;"><image src=""></image>동부다동빌딩 15층 <br> <a href="https://map.kakao.com/link/to/MyMind,37.567291412313274, 126.98226358838974" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-iwPosition = new kakao.maps.LatLng(37.567291412313274, 126.98226358838974); //인포윈도우 표시 위치입니다
-
-//인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({
-position : iwPosition, 
-content : iwContent 
-});
-
-//마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-infowindow.open(map, marker); 
-
-function resizeMap() {
-    var mapContainer = document.getElementById('map');
-    mapContainer.style.width = '650px';
-    mapContainer.style.height = '650px'; 
-}
-
-function relayout() {    
-    
-    // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
-    // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
-    // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
-    map.relayout();
-}
-</script>
 </html>

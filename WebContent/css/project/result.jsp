@@ -17,7 +17,7 @@
         
           <ol>
             <li><a href="about.jsp">심리검사하기</a></li>
-            <li><a href="result.jsp">결과보기</a></li>
+            <li><a href="about2.jsp">결과보기</a></li>
             
           </ol>
         </div>
@@ -29,9 +29,9 @@
     <section class="about" data-aos="fade-up">
       <div class="container">
 
-        <h1>심리검사 페이지입니다</h1>
+        <h1>심리검사 결과 페이지입니다</h1>
         <div class="text-right">
-					<a class="btn btn-success" href="result.jsp" role="button">제출</a>
+					<a class="btn btn-success" href="about2.html" role="button">제출</a>
 				</div>
         
       </div>

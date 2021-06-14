@@ -14,7 +14,6 @@
 	.card img {
 		width: 420px;
 		height: 420px; 
-		
 	}
 	
 	.card-footer img{
@@ -44,7 +43,7 @@
 	try{
 		cPage = Integer.parseInt(tempPage);
 	}catch(NumberFormatException e){
-		cPage = 1;		
+		cPage = 1;
 	}
 	
 	int displayCount = 6; //페이지에 보여줄 리스트 개수
@@ -56,6 +55,7 @@
 	SimpleDateFormat fm = new SimpleDateFormat("MMddHHmm");
 	String to = fm.format(cal.getTime());
 	int hour = Integer.parseInt(to);
+	
 %>
 
 
@@ -66,16 +66,24 @@
 <!-- card start -->
 <div class="card-group">
 	<%
-	int hiddenTime = 0;
 		if(list.size() != 0){
 			for(MaincontDto dto : list){
-				int regDate = Integer.parseInt(dto.getRegdate()); //월일시분 6131323
-				int regHour = Integer.parseInt(dto.getRegdate().substring(4,6));
+				int regDay = Integer.parseInt(dto.getRegdate()); //월일시분 6131323
+				int regHour = Integer.parseInt(dto.getRegdate().substring(4,6)); //H
 				int curHour = Integer.parseInt(to.substring(4,6));
-				//현재<=등록시간+24
-				if(hour <= regDate ){
+				
+				int regDate = Integer.parseInt(dto.getRegdate().substring(2,4)); //D 
+				int curDate = Integer.parseInt(to.substring(2,4));
+
+				int hiddenTime = 0;
+				
+				//현재<=(등록시간+24)
+				if(hour <= regDay ){
 					if(regHour>=curHour){ //등록시간>=현재시간
 						hiddenTime = (regHour+24)-(curHour+24);
+						if(regDate-1==curDate && hiddenTime==0){ 
+							hiddenTime = 1; 
+						}
 						if(hiddenTime >= 1 ){
 	%>
 				<%--남은시간 1시간 이상일 때 --%>
@@ -103,7 +111,7 @@
 					</div>
 		<%
 						}// end of if%>
-		<%		}else{//regDate<hour
+		<%		}else{
 						hiddenTime = (regHour+24)-curHour;
 		
 						if(hiddenTime >= 1 ){ 
@@ -111,17 +119,15 @@
 					<div class="row row-cols-1 row-cols-md-1">
 					 <div class="col mb-4">
 						<div class="card" >
-							<img src="../../img/community/img3.jpg" class="card-img-top" alt="...">
+							<img src="../../img/community/img1.jpg" class="card-img-top" alt="...">
 								<div class="card-body">
 								<h5 class="card-title"><%=dto.getTitle() %></h5>
 								<p class="card-text"><%=dto.getContent() %></p>
 								</div>
-								
 								<div class="card-footer">
 									<div>
 										<small class="text-muted"><%=dto.getNum() %>번째 고민글</small> 
 									</div>
-			 	
 									<div class="dropdown">
 										<small class="text-muted">
 											<%=hiddenTime %>시간 뒤 사라질 예정
@@ -139,10 +145,9 @@
 					</div>
 		<%
 						}//if end
-					}//regDate<hour end
+					}//regDay<hour end
 				}//hour <= 현재-24<=등록시간 end
 		}//for end
-			
 	}else{ %>
 		<div class="card-body">등록된 글이 없습니다.</div>
 	<%} %>

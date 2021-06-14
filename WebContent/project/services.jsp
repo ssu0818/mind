@@ -99,8 +99,6 @@ response.setContentType("text/html; charset=UTF-8");
           <li><a href="about.html">심리검사하기</a></li>
           <li><a href="services.jsp">map</a></li>
           <li><a href="portfolio.html">커뮤니티</a></li>
-        
-          
           <li ><a href="othersite.html">other site</a> </li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -141,7 +139,9 @@ response.setContentType("text/html; charset=UTF-8");
         <div class="row">
         
             <div class="col-lg-8 entries">
-          
+      <div class="container-fluid p-0">
+      		<div id="map" style="width:100%; height:350px;  background-color: yellow;"></div>
+      </div>    
           <button type="button" class="btn btn-outline-primary" style="margin:10px 5px;" value="강남구정신건강복지센터" id="btn1"  onsubmit="searchPlaces()">강남구</button>
            <button type="button" class="btn btn-outline-info"style="margin:10px 5px;"  value="강동구정신건강복지센터" id= "btn2"  onsubmit="searchPlaces()">강동구</button>
           <button type="button" class="btn btn-outline-secondary"style="margin:10px 5px;" value="강서구정신건강복지센터" id="btn3"  onsubmit="searchPlaces()">강서구</button>
@@ -176,9 +176,7 @@ response.setContentType("text/html; charset=UTF-8");
    <!-- ======= Map Section ======= -->     
      	
     <section class="map mt-2">
-      <div class="container-fluid p-0">
-      		<div id="map" style="width:100%; height:350px;  background-color: yellow;"></div>
-      </div>
+      
     </section>
    <!-- End Map Section -->      
         <!-- ======= Why Us Section ======= -->
@@ -1567,8 +1565,6 @@ response.setContentType("text/html; charset=UTF-8");
 					    bounds = new kakao.maps.LatLngBounds(), 
 					    listStr = '';
 					    
-					    // 검색 결과 목록에 추가된 항목들을 제거합니다
-					    removeAllChildNods(listEl);
 					
 					    // 지도에 표시되고 있는 마커를 제거합니다
 					    removeMarker();
@@ -1606,11 +1602,7 @@ response.setContentType("text/html; charset=UTF-8");
 					            };
 					        })(marker, places[i].place_name);
 					
-					        fragment.appendChild(itemEl);
 					    }
-					
-					    // 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
-					    listEl.appendChild(fragment);
 					
 					    // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
 					    map.setBounds(bounds);
@@ -1678,12 +1670,6 @@ response.setContentType("text/html; charset=UTF-8");
 					    infowindow.open(map, marker);
 					}
 					
-					 // 검색결과 목록의 자식 Element를 제거하는 함수입니다
-					function removeAllChildNods(el) {   
-					    while (el.hasChildNodes()) {
-					        el.removeChild (el.lastChild);
-					    }
-					}
 	}; //onload end
 </script>
 </html>

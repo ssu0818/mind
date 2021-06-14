@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Moderna Bootstrap Template - Index</title>
+  <title>Services - Moderna Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
 
@@ -36,92 +36,47 @@
   ======================================================== -->
 </head>
 <style>
-  #story1text{
-    text-align: left;
-    font-size: 30px;
-    font-weight: 700;
-
-  }
+.seoulmap{
+  text-align: center;
+}
+#tv {
+      text-align: center;
+     
+      position: relative;
+      width: 100px;
+      height: 50px;
+      margin: 20px  20px;
+      
+      border: 5px solid blue;
+ 
+      border-radius: 50% / 10%;
+      color: white;
+      text-align: center;
+      text-indent: .1em;
+      float: right;
+    }
+    #tv:before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      right: -5%;
+      left: -5%;
+      background: inherit;
+      border-radius: 5% / 50%;
+      float: right;
+    }
+    .seoulbtn{
+      padding: 10px 10px;
+    }
 </style>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">
-    <div class="container">
+  <div id="map" style="height: 350px; width: 100%;"></div>
+      
 
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>My Mine</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu float-right d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="index.html">story</a></li>
-          <li><a href="about.html">심리검사하기</a></li>
-          <li><a href="services.html">map</a></li>
-          <li><a href="portfolio.html">커뮤니티</a></li>
-        
-          
-          <li ><a href="othersite.html">other site</a> </li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-  </header><!-- End Header -->
-
-
-
-  <main id="main">
-
-  
-    <!-- ======= story Section ======= -->
-
-   
-
-
-    <section id="hero"  class="d-flex justify-cntent-center align-items-center" >
-    
-      <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel"  >
-  
-        <!-- Slide 1 -->
-     
-        <div class="carousel-item active" >
-
-          <div class="carousel-container" >
-            
-            <p id="story1text" class="animate__animated animate__fadeInDown" >지친 하루</span></p>
-            <p class="animate__animated animate__fadeInDown" style="text-align: left;">무기력함을 느끼며 잠드는 시간이 많아졌나요?</p>
-          </div>
-        </div>
-
-        <a class="carousel-control-next" href="stroy2.html" role="button" data-slide="next">
-          <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-  
-      </div>
-    </section>
-
-
-   
-  
-    
-   
-    <!-- End stroy --> 
-
-    
-    
-
-
-
-
-
-
-
-
+</body>
   <!-- ======= Footer ======= -->
   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
@@ -138,6 +93,7 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
@@ -153,8 +109,56 @@
   <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
-</body>
-
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f54af8924919de3e88d60eba1ed58b18"></script>
+  <script>
+  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = { 
+          center: new kakao.maps.LatLng(37.567291412313274, 126.98226358838974), // 지도의 중심좌표
+          level: 3 // 지도의 확대 레벨
+      };
+  
+  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+  
+  // 마커가 표시될 위치입니다 
+  var markerPosition  = new kakao.maps.LatLng(37.567291412313274, 126.98226358838974); 
+  
+  // 마커를 생성합니다
+  var marker = new kakao.maps.Marker({
+      position: markerPosition
+  });
+  
+  // 마커가 지도 위에 표시되도록 설정합니다
+  marker.setMap(map);
+  
+  var iwContent = '<div style="padding:5px;"><image src=""></image>동부다동빌딩 15층 <br> <a href="https://map.kakao.com/link/to/MyMind,37.567291412313274, 126.98226358838974" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+  iwPosition = new kakao.maps.LatLng(37.567291412313274, 126.98226358838974); //인포윈도우 표시 위치입니다
+  
+  //인포윈도우를 생성합니다
+  var infowindow = new kakao.maps.InfoWindow({
+  position : iwPosition, 
+  content : iwContent 
+  });
+  
+  //마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+  infowindow.open(map, marker); 
+  
+  function resizeMap() {
+      var mapContainer = document.getElementById('map');
+      mapContainer.style.width = '650px';
+      mapContainer.style.height = '650px'; 
+  }
+  
+  function relayout() {    
+      
+      // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+      // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
+      // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+      map.relayout();
+  }
+  
+  // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+  // marker.setMap(null);    
+  </script>
+<script src="assets/js/main.js"></script>
 </html>

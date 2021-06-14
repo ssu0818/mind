@@ -45,7 +45,7 @@ tbody tr td.ac{
         <h1>일상 스트레스 검사</h1>
         <div id="cap">
          <p>
-         	&check;&nbsp;총 소요 시간은 약 5분입니다.
+         	&check;&nbsp;총 소요 시간은 약 5분입니다.<br>
          </p>
 		</div>
     <form id="health02Form" method="post" action="result.jsp"> 
@@ -722,7 +722,9 @@ tbody tr td.ac{
         </div>  
         </div> 
        </form>
-        
+        <div>
+        <p>&check;&nbsp;출처: 조숙행, 이현수, 송현철, 김승현, 서광윤, 신동균, 고승덕 (2000), 한국어판 일상 생활 스트레스 척도(K-DSI)의 표준화 연구, 정신신체의학, 8(1), 72-87<p>
+        </div>
       </div>
     </section><!-- End About Section -->
 

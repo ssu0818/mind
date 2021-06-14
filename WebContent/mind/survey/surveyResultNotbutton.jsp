@@ -4,20 +4,30 @@
 
 	<%
 
-	Enumeration<String> radioValues = request.getParameterNames();
-	int sum = 306;
-	int maxScore = 406;
+	String radioValue1 = request.getParameter("env_1");
+	String radioValue2 = request.getParameter("env_2");
+	String radioValue3 = request.getParameter("env_3");
+	String radioValue4 = request.getParameter("env_4");
+	String radioValue5 = request.getParameter("env_5");
+	String radioValue6 = request.getParameter("env_6");
+	String radioValue7 = request.getParameter("env_7");
+	String radioValue8 = request.getParameter("env_8");
+	String radioValue9 = request.getParameter("env_9");
+	String radioValue10 = request.getParameter("env_10");
+	String[] radioValues = {radioValue1,radioValue2,radioValue3,radioValue4,radioValue5,radioValue6,radioValue7,radioValue8,radioValue9,radioValue10};
+	int sum = 0;
+	int maxScore = 35;
 	String books = "서점";
 	String cafe = "카페";
 	String park = "근린공원";
 	String theater = "영화관";
 	String mentalCenter = "정신건강복지센터";
 	try{
-		while( radioValues.hasMoreElements() ){
-	  		String radioValue = (String)radioValues.nextElement();
-	  		int point = Integer.parseInt(request.getParameter(radioValue));
-	  		sum += point;
-	 	}
+		
+		for(int i=0; i < radioValues.length; i++){
+				int point = Integer.parseInt(radioValues[i]);
+				sum += point;
+		}
 	 %>
 <%
 response.setContentType("text/html; charset=UTF-8");

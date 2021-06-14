@@ -55,7 +55,7 @@
            <td class="ac"><label for="env_1_many"> <input type="radio" name="env_1" id="env_1_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_1_awfully"> <input type="radio" name="env_1" id="env_1_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_1_infinitely"> <input type="radio" name="env_1" id="env_1_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn1"> <input type="button" name="btn1" id="btn1" value="선택 취소" onclick="test1();"></label></td> 
+           <td class="ac"><label for="env_1_none"><input type="radio" name="env_1" id="env_1_none" value="0" title="해당사항 없음" checked="checked"></label></td>
           </tr> 
           <tr> 
            <td>2. 다른 사람 때문에 일이 제대로 안되었다.</td> 
@@ -66,7 +66,7 @@
            <td class="ac"><label for="env_2_many"> <input type="radio" name="env_2" id="env_2_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_2_awfully"> <input type="radio" name="env_2" id="env_2_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_2_infinitely"> <input type="radio" name="env_2" id="env_2_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn2"> <input type="button" name="btn2" id="btn2" value="선택 취소" onclick="test2();"></label></td> 
+           <td class="ac"><label for="env_2_none"><input type="radio" name="env_2" id="env_2_none" value="0" title="해당사항 없음" checked="checked"></label></td> 
           </tr> 
           <tr> 
            <td>3. 자녀들과 문제가 있었다.</td> 
@@ -77,7 +77,7 @@
            <td class="ac"><label for="env_3_many"> <input type="radio" name="env_3" id="env_3_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_3_awfully"> <input type="radio" name="env_3" id="env_3_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_3_infinitely"> <input type="radio" name="env_3" id="env_3_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn2"> <input type="button" name="btn2" id="btn2" value="선택 취소" onclick="test3();"></label></td>  
+           <td class="ac"><label for="env_3_none"><input type="radio" name="env_3" id="env_3_none" value="0" title="해당사항 없음" checked="checked"></label></td>
           </tr> 
           <tr> 
             <td>4. 무시당했다.</td> 
@@ -88,7 +88,7 @@
            <td class="ac"><label for="env_4_many"> <input type="radio" name="env_4" id="env_4_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_4_awfully"> <input type="radio" name="env_4" id="env_4_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_4_infinitely"> <input type="radio" name="env_4" id="env_4_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn4"> <input type="button" name="btn4" id="btn4" value="선택 취소" onclick="test4();"></label></td>  
+           <td class="ac"><label for="env_4_none"><input type="radio" name="env_4" id="env_4_none" value="0" title="해당사항 없음" checked="checked"></label></td> 
            </tr> 
            <tr> 
             <td>5. 억지로 사교활동이나 모임에 참가하였다.</td> 
@@ -99,7 +99,7 @@
            <td class="ac"><label for="env_5_many"> <input type="radio" name="env_5" id="env_5_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_5_awfully"> <input type="radio" name="env_5" id="env_5_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_5_infinitely"> <input type="radio" name="env_5" id="env_5_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn5"> <input type="button" name="btn5" id="btn5" value="선택 취소" onclick="test5();"></label></td>  
+           <td class="ac"><label for="env_5_none"><input type="radio" name="env_5" id="env_5_none" value="0" title="해당사항 없음" checked="checked"></label></td>
            </tr> 
            <tr> 
             <td>6. 다른 사람이 약속을 어겼다.</td> 
@@ -110,7 +110,7 @@
            <td class="ac"><label for="env_6_many"> <input type="radio" name="env_6" id="env_6_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_6_awfully"> <input type="radio" name="env_6" id="env_6_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_6_infinitely"> <input type="radio" name="env_6" id="env_6_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn6"> <input type="button" name="btn6" id="btn6" value="선택 취소" onclick="test6();"></label></td>  
+           <td class="ac"><label for="env_6_none"><input type="radio" name="env_6" id="env_6_none" value="0" title="해당사항 없음" checked="checked"></label></td>
           </tr>
           <tr> 
             <td>7. 기다리던 사람한테서 연락이 없었다.</td> 
@@ -121,7 +121,7 @@
            <td class="ac"><label for="env_7_many"> <input type="radio" name="env_7" id="env_7_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_7_awfully"> <input type="radio" name="env_7" id="env_7_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_7_infinitely"> <input type="radio" name="env_7" id="env_7_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn7"> <input type="button" name="btn7" id="btn7" value="선택 취소" onclick="test7();"></label></td>  
+           <td class="ac"><label for="env_7_none"><input type="radio" name="env_7" id="env_7_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
           </tr>
           <tr> 
             <td>8. 누군가 허락 없이 물건을 빌려갔다.</td> 
@@ -132,7 +132,7 @@
            <td class="ac"><label for="env_8_many"> <input type="radio" name="env_8" id="env_8_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_8_awfully"> <input type="radio" name="env_8" id="env_8_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_8_infinitely"> <input type="radio" name="env_8" id="env_8_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn8"> <input type="button" name="btn8" id="btn8" value="선택 취소" onclick="test8();"></label></td>  
+           <td class="ac"><label for="env_8_none"><input type="radio" name="env_8" id="env_8_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
           </tr>
           <tr> 
             <td>9. 배우자 또는 애인과 다투었다.</td> 
@@ -143,7 +143,7 @@
            <td class="ac"><label for="env_9_many"> <input type="radio" name="env_9" id="env_9_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_9_awfully"> <input type="radio" name="env_9" id="env_9_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_9_infinitely"> <input type="radio" name="env_9" id="env_9_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn9"> <input type="button" name="btn9" id="btn9" value="선택 취소" onclick="test9();"></label></td>  
+           <td class="ac"><label for="env_9_none"><input type="radio" name="env_9" id="env_9_none" value="0" title="해당사항 없음" checked="checked"></label></td>
           </tr>
           <tr> 
             <td>10. 다른 사람과 다투었다.(배우자나 애인 외에)</td> 
@@ -154,7 +154,7 @@
            <td class="ac"><label for="env_10_many"> <input type="radio" name="env_10" id="env_10_many" value="5" title="스트레스를 많이 받았다"></label></td> 
            <td class="ac"><label for="env_10_awfully"> <input type="radio" name="env_10" id="env_10_awfully" value="6" title="스트레스를 굉장히 많이 받았다"></label></td> 
            <td class="ac"><label for="env_10_infinitely"> <input type="radio" name="env_10" id="env_10_infinitely" value="7" title="스트레스를 극도로 받았다"></label></td> 
-           <td class="ac"><label for="btn10"> <input type="button" name="btn10" id="btn10" value="선택 취소" onclick="test10();"></label></td>  
+           <td class="ac"><label for="env_10_none"><input type="radio" name="env_10" id="env_10_none" value="0" title="해당사항 없음" checked="checked"></label></td>  
           </tr>
           <tr> 
            <td>11. 윗사람과 대립이 있었다.</td> 

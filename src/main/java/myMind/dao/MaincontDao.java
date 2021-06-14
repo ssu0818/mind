@@ -82,7 +82,6 @@ public class MaincontDao {
 				String regdate= rs.getString(index++);
 				list.add(new MaincontDto(num, writer, title, content, like, regdate));
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

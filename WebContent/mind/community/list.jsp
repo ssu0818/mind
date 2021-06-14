@@ -52,7 +52,6 @@
 	MaincontDao dao = MaincontDao.getInstance();
 	ArrayList<MaincontDto> list = dao.select(start, displayCount);
 	
-	
 	Calendar cal = Calendar.getInstance();
 	SimpleDateFormat fm = new SimpleDateFormat("MMddHHmm");
 	String to = fm.format(cal.getTime());

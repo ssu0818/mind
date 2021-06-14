@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>map</title>
+  <title>Services - Moderna Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -35,6 +35,41 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<style>
+.seoulmap{
+  text-align: center;
+}
+#tv {
+      text-align: center;
+     
+      position: relative;
+      width: 100px;
+      height: 50px;
+      margin: 20px  20px;
+      
+      border: 5px solid blue;
+ 
+      border-radius: 50% / 10%;
+      color: white;
+      text-align: center;
+      text-indent: .1em;
+      float: right;
+    }
+    #tv:before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      bottom: 10%;
+      right: -5%;
+      left: -5%;
+      background: inherit;
+      border-radius: 5% / 50%;
+      float: right;
+    }
+    .seoulbtn{
+      padding: 10px 10px;
+    }
+</style>
 
 <body>
 
@@ -55,8 +90,8 @@
           <li><a href="services.html">map</a></li>
           <li><a href="portfolio.html">커뮤니티</a></li>
         
-          <li><a href="othersite.html">other site</a></li>
           
+          <li ><a href="othersite.html">other site</a> </li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav><!-- .nav-menu -->
@@ -64,111 +99,11 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <div id="map" style="width:100%;height:350px;"></div>
 
-    <!-- ======= Contact Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Contact</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Contact</li>
-          </ol>
-        </div>
+   
 
-      </div>
-    </section><!-- End Contact Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6">
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="info-box">
-                  <i class="bx bx-map"></i>
-                  <h3>Our Address</h3>
-                  <p>Jung-gu Da-dong 88</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>kpc@gmail.com</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bx bx-phone-call"></i>
-                  <h3>Call Us</h3>
-                  <p>+82 1234-1234</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="form-row">
-
-              </div>
-             
-              <div class="form-group">
-               
-
-                  <img src="mymine.jpeg">
-              <div id="tv">
-                  mymind
-              </div>
-                <div class="validate"></div>
-              </div>
-              
-             
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-    <!-- ======= Map Section ======= -->     
-     	
-    <section class="map mt-2">
-      <div class="container-fluid p-0">
-      
-
-      		<div id="map" style="width:100%;height:350px; background-color : black"></div>
-     	
-      </div>
-    </section><!-- End Map Section -->
-
-  </main><!-- End #main -->
-
-   <!-- ======= Footer ======= -->
-   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>My Mine</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="">kpc</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -188,8 +123,6 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
-
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f54af8924919de3e88d60eba1ed58b18"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -236,12 +169,5 @@ function relayout() {
     // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
     map.relayout();
 }
-
-// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-// marker.setMap(null);    
 </script>
-
-
-
-
 </html>

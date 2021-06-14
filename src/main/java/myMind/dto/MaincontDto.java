@@ -1,4 +1,4 @@
-package myMind.dto;
+package myMind.dto; 
 
 public class MaincontDto {
 	private int num;

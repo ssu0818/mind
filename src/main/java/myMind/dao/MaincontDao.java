@@ -30,11 +30,8 @@ public class MaincontDao {
 			con = ConnLocator.getConnect();
 			StringBuilder sql = new StringBuilder();
 			sql.append("INSERT INTO maincont(m_num, m_writer, m_title, m_content, m_like, m_regdate) ");
-<<<<<<< HEAD
 			sql.append("VALUES(?, (select * from anonymous order by rand() limit 1), ?, ?, ?, NOW()) ");
-=======
 			sql.append("VALUES(?, (select * from anonymous order by rand() limit 1), ?, ?, ?, NOW())										");
->>>>>>> refs/remotes/origin/origin
 
 			pstmt = con.prepareStatement(sql.toString());
 			int index = 1;

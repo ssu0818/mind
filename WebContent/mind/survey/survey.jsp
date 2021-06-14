@@ -42,7 +42,7 @@
            <th scope="col">스트레스를 굉장히 많이 받았다</th> 
            <th scope="col">스트레스를 극도로 받았다</th> 
            <th scope="col">선택 취소</th> 
-
+//
           </tr> 
          </thead> 
          <tbody> 

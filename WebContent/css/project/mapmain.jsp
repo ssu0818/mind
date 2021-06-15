@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 
 <%
 request.setCharacterEncoding("UTF-8");
@@ -19,39 +19,98 @@ response.setContentType("text/html; charset=UTF-8");
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-        
+       
           <ol>
             <li><a href="services.html">map</a></li>
-            
+           
           </ol>
         </div>
 
       </div>
     </section>
-      
+     
 
    <!-- End Why Us Section -->
    
-       
+       <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+              <div class="container">
+               
+                  <div class="row">
+                 
+                      <div class="col-lg-8 entries" style="text-align: center;">
+                     
+                         <input type="button" id="111" value="서울특별시 심리상담센터" style=" background-color: white;
+                         width: 400px;
+                         height: 70px;
+                         border: solid 3px rgb(8, 25, 73);
+                        margin: 50px 350px;
+                        font-size: 20px;
+                        color: cadetblue;
+                        font-weight: 700;
+                        ">
+             
+   
+
+                       
+                    </div>  
+                  </div>
+                  </div>
+              </section>
+             <!-- ======= Why Us Section ======= -->
+             <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
+                <div class="container">
+         
+                  <div class="row">
+                   
+           
+          <div class="text-right">
+                 
+                  </div>
+               
+                    <input type="button" id="111" value="일상 스트레스 검사" style=" background-color: white;
+                    width: 400px;
+                    height: 70px;
+                    border: solid 3px white;
+                   margin: 0px 0px;
+                   padding: 0;
+                   font-size: 20px;
+                   color: rgb(19, 19, 90);
+                   font-weight: 400;
+                   ">
+         
+                   </div>
+               
+               
+                    <div id="cap" style="color: red; padding: 10px 30px; margin: 0px 30px ;">
+                    <div><p>
+                        &check;&nbsp;왜 나만 안 돼
+                    </p></div>
+                    </div>
+               
+     
+     
+                    </div>
+                  </div>
+         
+               
+              </section><!-- End Why Us Section -->
    
    <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
   <div class = "container">
-      <div id="maptext" style="color: cadetblue;">
-       <br><h2> 서울특별시 심리상담센터</h2> <br><br>
-        </div>
+     
         <div class="row">
-        
+       
             <div class="col-lg-8 entries">
-          
-          <button type="button" class="btn btn-outline-primary" style="margin:10px 5px;" value="강남구정신건강복지센터" id="btn1" size="1" onsubmit="searchPlaces()">강남구</button>
+         
+          <button type="button" class="btn btn-outline-primary" style="margin:10px 100px 10px 500px;" value="강남구정신건강복지센터" id="btn1" size="1" onsubmit="searchPlaces()">강남구</button>
            <button type="button" class="btn btn-outline-info"style="margin:10px 5px;"  value="강동구정신건강복지센터" id= "btn2" size="1" onsubmit="searchPlaces()">강동구</button>
           <button type="button" class="btn btn-outline-dark"style="margin:10px 5px;" value="강북구정신건강복지센터" id="btn21" size="1" onsubmit="searchPlaces()">강북구</button>
           <button type="button" class="btn btn-outline-secondary"style="margin:10px 5px;" value="강서구정신건강복지센터" id="btn3" size="1" onsubmit="searchPlaces()">강서구</button>
           <button type="button" class="btn btn-outline-success"style="margin:10px 5px;" value="관악구정신건강복지센터" id="btn4" size="1" onsubmit="searchPlaces()">관악구</button>
           <button type="button" class="btn btn-outline-success"style="margin:10px 5px;" value="광진구정신건강복지센터" id="btn18" size="1" onsubmit="searchPlaces()">광진구</button>
           <button type="button" class="btn btn-outline-danger"style="margin:10px 5px;"  value="구로구정신건강복지센터" id= "btn5" size="1" onsubmit="searchPlaces()">구로구</button>
-          <button type="button" class="btn btn-outline-warning"style="margin:10px 5px;" value="금천구정신건강복지센터" id= "btn6" size="1" onsubmit="searchPlaces()">금천구</button>
-          <button type="button" class="btn btn-outline-primary"style="margin:10px 5px;" value="노원구정신건강복지센터" id="btn24" size="1" onsubmit="searchPlaces()">노원구</button>
+          <button type="button" class="btn btn-outline-warning"style="margin:10px 5px; " value="금천구정신건강복지센터" id= "btn6" size="1" onsubmit="searchPlaces()">금천구</button>
+          <button type="button" class="btn btn-outline-primary"style="margin:10px 5px ;" value="노원구정신건강복지센터" id="btn24" size="1" onsubmit="searchPlaces()">노원구</button>
           <button type="button" class="btn btn-outline-dark"style="margin:10px 5px;" value="도봉구정신건강복지센터" id="btn7" size="1" onsubmit="searchPlaces()">도봉구</button>
           <button type="button" class="btn btn-outline-primary"style="margin:10px 5px;" value="동대문구정신건강복지센터" id="btn8" size="1" onsubmit="searchPlaces()">동대문구</button>
           <button type="button" class="btn btn-outline-warning"style="margin:10px 5px;" value="동작구정신건강복지센터" id="btn20" size="1" onsubmit="searchPlaces()">동작구</button>
@@ -75,29 +134,29 @@ response.setContentType("text/html; charset=UTF-8");
 <section class="map mt-2">
       <div class="container-fluid p-0">
               <div class="map_wrap">
-			<div id="map" style="width: 960px; height: 100%; margin:0 auto; padding:0 auto; overflow: hidden;"></div>
+<div id="map" style="width: 960px; height: 100%; margin:0 auto; padding:0 auto; overflow: hidden;"></div>
            
             </div>
             </div>
     </section>
-    
-            
-      
+   
+           
+     
         <!-- ======= Why Us Section ======= -->
         <section class="why-us section-bg" data-aos="fade-up" date-aos-delay="200">
           <div class="container">
-    
-            
-          
-            
+   
+           
+         
+           
             </div>
-    
+   
          
         </section><!-- End Why Us Section -->
-    
+   
         <section class="blog" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
           <div class="container">
-            
+           
                <div class="row">
                 <table class="table table-striped" >
                   <thead>
@@ -118,7 +177,7 @@ response.setContentType("text/html; charset=UTF-8");
               </div>
               </div>
           </section>
-      
+     
               <!-- ======= Why Us Section ======= -->
 
 
@@ -128,20 +187,7 @@ response.setContentType("text/html; charset=UTF-8");
    
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>My Mine</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="">kpc</a>
-      </div>
-    </div>
-    <%@ include file="assets/js/mapMainJs.jsp" %>
+ 
+   <%@ include file="assets/js/mapMainJs.jsp" %>
  <%@ include file="../footer.jsp" %>
+    

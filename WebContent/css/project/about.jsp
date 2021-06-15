@@ -720,12 +720,11 @@ tbody tr td.ac{
         <div class="ac mt20">
         <input type="submit" value="결과 보기">
         </div>  
-        </div> 
        </form>
+        </div> 
         <div>
-        <p>&check;&nbsp;출처: 조숙행, 이현수, 송현철, 김승현, 서광윤, 신동균, 고승덕 (2000), 한국어판 일상 생활 스트레스 척도(K-DSI)의 표준화 연구, 정신신체의학, 8(1), 72-87<p>
+        <p>&check;&nbsp;출처: 조숙행, 이현수, 송현철, 김승현, 서광윤, 신동균, 고승덕 (2000), 한국어판 일상 생활 스트레스 척도(K-DSI)의 표준화 연구, 정신신체의학, 8(1), 72-87</p>
         </div>
-      </div>
     </section><!-- End About Section -->
 
    

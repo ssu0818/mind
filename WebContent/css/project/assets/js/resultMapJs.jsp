@@ -166,12 +166,12 @@
 					            
 					            kakao.maps.event.addListener(marker, 'click', function () {
 					            	const position = this.getPosition();
-					            	const url = 'https://map.kakao.com/link/to/'+placeId[0];
+					            	const url = 'https://map.kakao.com/link/to/'+placeId[i];
 					            	window.open(url, '_blank');
 					            	});
 					            	
 					            itemEl.onclick =  function () {
-					            	const itemUrl = 'https://map.kakao.com/link/to/'+placeId[0];
+					            	const itemUrl = 'https://map.kakao.com/link/to/'+placeId[i];
 					            	window.open(itemUrl, '_blank');
 					            };
 					            
@@ -455,12 +455,12 @@
 				            
 				            kakao.maps.event.addListener(marker, 'click', function () {
 				            	const position = this.getPosition();
-				            	const url = 'https://map.kakao.com/link/to/'+placeId[0];
+				            	const url = 'https://map.kakao.com/link/to/'+placeId[i];
 				            	window.open(url, '_blank');
 				            	});
 				            	
 				            itemEl.onclick =  function () {
-				            	const itemUrl = 'https://map.kakao.com/link/to/'+placeId[0];
+				            	const itemUrl = 'https://map.kakao.com/link/to/'+placeId[i];
 				            	window.open(itemUrl, '_blank');
 				            };
 				            
